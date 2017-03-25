@@ -1,0 +1,3 @@
+[submodule "mightyeditor"]
+	path = mightyeditor
+	url = git@github.com:MaxPleaner/mightyeditor.git
