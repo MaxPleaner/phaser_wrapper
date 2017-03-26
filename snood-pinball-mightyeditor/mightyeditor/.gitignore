@@ -1,0 +1,7 @@
+server/node_modules
+server/secret
+.kateproject
+.directory
+.kateproject.d
+.commit
+.kdev4

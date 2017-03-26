@@ -1,0 +1,56 @@
+- menu
+  - create
+    - `@game.state.start('play')`
+
+- preload
+  - `this.game.load.physics("my_physics", "assets/sprite_physics.json")
+
+- play
+  - create
+    - backround color
+      `this.game.stage.backgroundColor = '...'`
+    - physics engine
+      - `this.game.physics.startSystem Phaser.Physics.P2JS
+      - `this.game.physics.p2.gravity.y = 1000`
+      - `seed = Date.now(); random = new Phaser.RandomDataGenerator [seed]`
+    - asset declarations
+      - `@b = mt.create 'bg'`
+      - same for other assets
+    - cursors
+      - `@cursors = @game.keyboard.createCursorKeys()`
+    - animations
+      - `this.character.animations.add 'name', [<frame_nums>], fps, loop=true`
+      - `this.caracter.animations.play 'name'
+  - update
+    - cursors & velocity:
+      - `if(@cursors.left.isDown){ ... }`
+      - `@character.body.velocity.x = -200`
+    - collisions:
+      - note that groups need to have `self` called
+      - `@game.physics.arcade.collide @character, @blocks.self, (char, block) -> {}, null, this`
+    - rotating assets
+      - `this character.scale.x = -1`
+    - collision handlers
+      - (in collision function) `if block.body.touching.right`
+    - destruction
+      - `block.destroy()`
+    - distinguishing between assets in a group
+      - `block.key` => filename
+    - custom data:
+      - `this.<asset>.getData().userData.<attr>`
+    - overlap check
+      - spriteA.getBounds() and same for spriteB
+      - `Phaser.Rectangle.intersects boundsa, boundsb`
+      - 
+    - text elements
+      - `this.<asset>._text`
+      - `this.<asset>.setText("text")`
+
+- editor
+  - physics
+    - select asset
+    - select physics tab
+    - enable=1, immovable=0, collideWithWorldBounds=1
+  - collision bounds
+    - set width and height of asset
+    - set anchorx and anchory in physics settings (0.5, 0,5)  

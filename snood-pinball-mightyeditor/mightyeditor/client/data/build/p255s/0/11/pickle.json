@@ -1,0 +1,36 @@
+{ 
+    
+    "pickle": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   468, 156  ,  399, 214  ,  365, 222  ,  387, 98  ,  414, 100  ,  443, 113  ,  467, 131  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   136, 279  ,  148, 236  ,  173, 210  ,  245, 150  ,  355, 98  ,  315, 251  ,  184, 326  ,  139, 304  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   315, 251  ,  355, 98  ,  387, 98  ,  365, 222  ,  348, 241  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   184, 326  ,  215, 319  ,  211, 326  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   241, 315  ,  215, 319  ,  315, 251  ,  291, 284  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   184, 326  ,  315, 251  ,  215, 319  ]
+        }
+    ]
+}
