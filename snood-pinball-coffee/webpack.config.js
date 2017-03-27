@@ -6,7 +6,7 @@ var phaser = path.join(phaserModule, 'build/custom/phaser-split.js'),
   p2 = path.join(phaserModule, 'build/custom/p2.js');
 
 module.exports = {
-  entry: './game.coffee',
+  entry: './loader.coffee',
   output: {
     filename: 'bundle.js'
   },
