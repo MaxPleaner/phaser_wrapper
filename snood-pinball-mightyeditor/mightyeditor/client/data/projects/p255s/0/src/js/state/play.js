@@ -6,6 +6,7 @@ window["11"].state.play = {
 	
 	create: function(){
 		var game = this.game
+		var bg = mt.create('bg_castle')
 		this.foo = mt.create('foo');
 		this.foo.scale.setTo(0.125, 0.125)
 		this.paddles = mt.create('paddles');		
@@ -21,7 +22,6 @@ window["11"].state.play = {
 		window.game = this.game
 		window.x = this
 		window.pickles = game.add.group()
-
 
 		// non-rectangular sprites
 		game.physics.startSystem(Phaser.Physics.P2JS);
@@ -50,9 +50,11 @@ window["11"].state.play = {
 		contactMaterial.frictionRelaxation = 3;     // Relaxation of the resulting FrictionEquation that this ContactMaterial generate.
 		contactMaterial.surfaceVelocity = 0;        // Will add surface velocity to this material. If bodyA rests on top if bodyB, and the surface velocity is positive, bodyA will slide to the right.
 		
+		this.fire_bottom = game.add.sprite(-30, 650, '/fire-bottom.png')
+		this.fire_bottom.scale.setTo(7.389, 1.5761)
 		
-		this.pickle1 = game.add.sprite(910, 390, '/pickle.png');
-		this.pickle2 = game.add.sprite(250, 390, '/pickle.png');
+		this.pickle1 = game.add.sprite(500, 550, '/pickle.png');
+		this.pickle2 = game.add.sprite(100, 500, '/pickle.png');
 		var pickle1 = this.pickle1
 		var pickle2 = this.pickle2
 		window.pickle1 = pickle1		
@@ -60,13 +62,11 @@ window["11"].state.play = {
 		pickles.add(pickle1)
 		pickles.add(pickle2)
 		pickles.forEach(function(pickle){
-			
-			pickle.anchor.setTo(0.5,0.5)
 
 			game.physics.p2.enable(pickle, false);
 			pickle.body.clearShapes();
 			pickle.body.loadPolygon('pickle_physics', 'pickle');
-// 			pickle.scale.setTo(0.57, 0.67)
+			pickle.scale.setTo(0.5, 0.5)
 			
 			// Foo to pickle interaction
 			var pickle_material = game.physics.p2.createMaterial(
@@ -78,13 +78,15 @@ window["11"].state.play = {
 				foo_material
 			);
 			contactMaterial.friction = 0.3;     // Friction to use in the contact of these two materials.
-			contactMaterial.restitution = 2.0;  // Restitution (i.e. how bouncy it is!) to use in the contact of these two materials.
+			contactMaterial.restitution = 0.3;  // Restitution (i.e. how bouncy it is!) to use in the contact of these two materials.
 			contactMaterial.stiffness = 1e7;    // Stiffness of the resulting ContactEquation that this ContactMaterial generate.
 			contactMaterial.relaxation = 3;     // Relaxation of the resulting ContactEquation that this ContactMaterial generate.
 			contactMaterial.frictionStiffness = 1e7;    // Stiffness of the resulting FrictionEquation that this ContactMaterial generate.
 			contactMaterial.frictionRelaxation = 3;     // Relaxation of the resulting FrictionEquation that this ContactMaterial generate.
 			contactMaterial.surfaceVelocity = 0;        // Will add surface velocity to this material. If bodyA rests on top if bodyB, and the surface velocity is positive, bodyA will slide to the right.
 
+			
+			pickle.anchor.setTo(0.7, 0.5)
 		})
 		
 		var pickle_collision = game.physics.p2.createCollisionGroup();
@@ -92,7 +94,7 @@ window["11"].state.play = {
 		// collision setup for non-rectanular sprites
 		game.physics.p2.updateBoundsCollisionGroup();
 		this.foo.body.setCollisionGroup(foo_collision);
-		this.foo.body.collides([foo_collision, pickle_collision]);
+		this.foo.body.collides([foo_collision, pickle_collision])
 		pickles.forEach(function(pickle){
 			pickle.body.setCollisionGroup(pickle_collision);
 			pickle.body.collides(foo_collision, () => {
@@ -114,82 +116,108 @@ window["11"].state.play = {
 	},
 	
 	left_striking: function() {
-		val = this.left_strike_frames
-		
+		return (this.leftKey.isDown) && (this.pickle2.body.rotation > -4) 
 	},
 	
 	left_strike_reverting: function() {
+		return this.pickle2.body.rotation < -2.1
 	},
 	
 	right_striking: function() {
+		return (this.rightKey.isDown) && (this.pickle1.body.rotation < 2) 		
 	},
 	
 	right_strike_reverting: function() {
-	}
+		console.log(this.pickle1.body.rotation)
+		return this.pickle1.body.rotation > 0.5
+	},
+	
+	respawn: function() {
+		this.foo.body.y = 0
+		this.foo.body.x = 300
+	},
+	
 	
 	update: function(){
 		
 		if (this.left_striking()) {
 			this.pickle2.body.rotateLeft(300)
 		} else if (this.left_strike_reverting()){
+			this.pickle2.body.rotateRight(300)
 		} else {
 			this.pickle2.body.rotation = -2 // flip it 180%
 		}
 		
+		if (this.right_striking()) {
+			this.pickle1.body.rotateRight(300)
+		} else if (this.right_strike_reverting()){
+			this.pickle1.body.rotateLeft(300)
+		} else {
+			this.pickle1.body.rotation = 0
+		}
+		
+		if (this.touching_floor()) {
+			this.respawn()
+		}
 		
 		
+
+	// UNCOMMENT THIS STUFF TO ENABLE MANUAL MOVEMENT OF BALL
+
 		// Foo (ball object) movement stuff
-		var vel = this.foo.body.velocity
-		var vel_change_y = 500
-		var vel_change_x = 50
-		var vel_slowdown_x = 0
-		var vel_slowdown_y = 0
-		var max_vel_x = 1000
-		var max_vel_y = 1000
+// 		var vel = this.foo.body.velocity
+// 		var vel_change_y = 500
+// 		var vel_change_x = 50
+// 		var vel_slowdown_x = 0
+// 		var vel_slowdown_y = 0
+// 		var max_vel_x = 1000
+// 		var max_vel_y = 1000		
+		
 // 		var max_angular_vel = 5
 // 		var xy_vel_over_angular_vel_ratio = 1500
 // 		var angular_vel_reversal_speedup = 1.0 // 1 is the minimum
-
-		if (!this.upKey.isDown) {
-			if (vel.y > vel_slowdown_y) { vel.y -= vel_slowdown_y}
-		} else {
-			vel.y -= vel_change_y
-		}
 		
-		if (!this.downKey.isDown) {
-			if (vel.y < -vel_slowdown_y) { vel.y += vel_slowdown_y}
-		} else { 
-			vel.y += vel_change_y
-		}
 		
-		if (!this.rightKey.isDown) {
-			if (this.touching_floor()){
-				if (vel.x > vel_slowdown_x) { vel.x -= vel_slowdown_x }
-			}
-		} else { 
-			vel.x += vel_change_x
-		}
+// 		if (!this.upKey.isDown) {
+// 			if (vel.y > vel_slowdown_y) { vel.y -= vel_slowdown_y}
+// 		} else {
+// 			vel.y -= vel_change_y
+// 		}
 		
-		if (!this.leftKey.isDown) {
-			if (this.touching_floor()){
-				if (vel.y < -vel_slowdown_x) { vel.x += vel_slowdown_x }
-			}
-		} else { 
-			vel.x -= vel_change_x		
-		}
+// 		if (!this.downKey.isDown) {
+// 			if (vel.y < -vel_slowdown_y) { vel.y += vel_slowdown_y}
+// 		} else { 
+// 			vel.y += vel_change_y
+// 		}
 		
-		if (vel.x > max_vel_x) {
-			vel.x = max_vel_x
-		}
-		if (vel.x < -max_vel_x) {
-			vel.x = -max_vel_x 
-		}
-		if (vel.y > max_vel_x) {
-			vel.y = max_vel_y
-		}
-		if (vel.y < -max_vel_y) {
-			vel.y = -max_vel_y
-		}
+// 		if (!this.rightKey.isDown) {
+// 			if (this.touching_floor()){
+// 				if (vel.x > vel_slowdown_x) { vel.x -= vel_slowdown_x }
+// 			}
+// 		} else { 
+// 			vel.x += vel_change_x
+// 		}
+		
+// 		if (!this.leftKey.isDown) {
+// 			if (this.touching_floor()){
+// 				if (vel.y < -vel_slowdown_x) { vel.x += vel_slowdown_x }
+// 			}
+// 		} else { 
+// 			vel.x -= vel_change_x		
+// 		}
+		
+// 		if (vel.x > max_vel_x) {
+// 			vel.x = max_vel_x
+// 		}
+// 		if (vel.x < -max_vel_x) {
+// 			vel.x = -max_vel_x 
+// 		}
+// 		if (vel.y > max_vel_x) {
+// 			vel.y = max_vel_y
+// 		}
+// 		if (vel.y < -max_vel_y) {
+// 			vel.y = -max_vel_y
+// 		}
 
 	// The followin stuff is not necessary with P2 physics, or has a different API
 		

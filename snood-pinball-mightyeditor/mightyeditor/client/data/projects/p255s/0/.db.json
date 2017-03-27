@@ -4,6 +4,80 @@
 			"name": "objects",
 			"contents": [
 				{
+					"assetId": "07849379-5bd3-4b06-8b07-48e8514ac7eb",
+					"__image": "22a299e8-a881-4023-a030-0621e5b88277.png",
+					"x": -29.999999999999996,
+					"y": 649.9999999999999,
+					"type": 0,
+					"anchorX": 0,
+					"anchorY": 0,
+					"userData": {},
+					"physics": {
+						"enable": 0
+					},
+					"scaleX": 7.389006121714792,
+					"scaleY": 1.5761019299963466,
+					"angle": 0,
+					"alpha": 1,
+					"tmpName": "fire-bottom",
+					"frame": 0,
+					"isVisible": 1,
+					"isLocked": 0,
+					"contents": [],
+					"width": 1330.0211019086626,
+					"height": 69.34848491983925,
+					"id": "tmp1490568825851",
+					"name": "fire-bottom",
+					"index": -1,
+					"fullPath": "/fire-bottom",
+					"movies": {
+						"__main": {
+							"frames": [],
+							"info": {
+								"fps": 60
+							},
+							"subdata": []
+						}
+					}
+				},
+				{
+					"assetId": "977e45ac-00d1-485e-a181-97d186bacd14",
+					"__image": "740d9118-3462-43e7-b92e-32fc3a56d3c1.png",
+					"x": 8.171241461241152e-14,
+					"y": 2.4999999999999005,
+					"type": 0,
+					"anchorX": 0,
+					"anchorY": 0,
+					"userData": {},
+					"physics": {
+						"enable": 0
+					},
+					"scaleX": 5.023799743461077,
+					"scaleY": 2.8203326213573576,
+					"angle": 0,
+					"alpha": 1,
+					"tmpName": "bg_castle",
+					"frame": 0,
+					"isVisible": 1,
+					"isLocked": 0,
+					"contents": [],
+					"width": 1286.0927343260357,
+					"height": 722.0051510674836,
+					"id": "tmp1490565395371",
+					"name": "bg_castle",
+					"index": -1,
+					"fullPath": "/bg_castle",
+					"movies": {
+						"__main": {
+							"frames": [],
+							"info": {
+								"fps": 60
+							},
+							"subdata": []
+						}
+					}
+				},
+				{
 					"assetId": "2de18482-dc31-42ab-8d56-bdf1741ebf9b",
 					"__image": "610295d0-6190-4fc8-b00c-1625a5824610.png",
 					"x": 1224.999999999999,
@@ -149,7 +223,7 @@
 					"isLocked": 0,
 					"contents": [],
 					"width": 100.19062205492546,
-					"height": 109.00008325220176,
+					"height": 109.00008325220175,
 					"id": "tmp1490544694008",
 					"name": "foo",
 					"index": -1,
@@ -409,21 +483,61 @@
 					"fps": 10,
 					"updated": 1490495883998,
 					"atlas": ""
+				},
+				{
+					"__image": "740d9118-3462-43e7-b92e-32fc3a56d3c1.png",
+					"id": "977e45ac-00d1-485e-a181-97d186bacd14",
+					"name": "bg_castle.png",
+					"path": "/bg_castle.png",
+					"fullPath": "/bg_castle.png",
+					"key": "/bg_castle.png",
+					"width": 256,
+					"height": 256,
+					"frameWidth": 256,
+					"frameHeight": 256,
+					"frameMax": -1,
+					"margin": 0,
+					"spacing": 0,
+					"anchorX": 0,
+					"anchorY": 0,
+					"fps": 10,
+					"updated": 1490567514336,
+					"atlas": ""
+				},
+				{
+					"__image": "22a299e8-a881-4023-a030-0621e5b88277.png",
+					"id": "07849379-5bd3-4b06-8b07-48e8514ac7eb",
+					"name": "fire-bottom.png",
+					"path": "/fire-bottom.png",
+					"fullPath": "/fire-bottom.png",
+					"key": "/fire-bottom.png",
+					"width": 180,
+					"height": 44,
+					"frameWidth": 180,
+					"frameHeight": 44,
+					"frameMax": -1,
+					"margin": 0,
+					"spacing": 0,
+					"anchorX": 0,
+					"anchorY": 0,
+					"fps": 10,
+					"updated": 1490568814056,
+					"atlas": ""
 				}
 			],
-			"count": 12
+			"count": 14
 		},
 		{
 			"name": "map",
 			"contents": [
 				{
-					"cameraX": -429.6666666666665,
-					"cameraY": -250,
-					"worldWidth": 1280,
-					"worldHeight": 710,
-					"viewportWidth": 1280,
-					"viewportHeight": 710,
-					"scaleMode": "RESIZE",
+					"cameraX": -436.66666666666674,
+					"cameraY": -82.66666666666667,
+					"worldWidth": 600,
+					"worldHeight": 700,
+					"viewportWidth": 600,
+					"viewportHeight": 700,
+					"scaleMode": "NO_SCALE",
 					"gridX": 32,
 					"gridY": 32,
 					"gridOffsetX": 0,
@@ -531,10 +645,10 @@
 								"birthtime": "2017-03-25T04:32:56.527Z"
 							},
 							"fullPath": "/cssmain.css",
-							"id": 507
+							"id": 693
 						}
 					],
-					"id": 508
+					"id": 694
 				},
 				{
 					"name": "fonts",
@@ -575,10 +689,10 @@
 								"birthtime": "2017-03-25T04:32:56.527Z"
 							},
 							"fullPath": "/fontsfonts.css",
-							"id": 509
+							"id": 695
 						}
 					],
-					"id": 510
+					"id": 696
 				},
 				{
 					"name": "js",
@@ -639,7 +753,7 @@
 										"birthtime": "2017-03-25T04:32:56.499Z"
 									},
 									"fullPath": "/jslibmt.data.js",
-									"id": 511
+									"id": 697
 								},
 								{
 									"name": "mt.data.json",
@@ -660,7 +774,7 @@
 										"birthtime": "2017-03-25T04:32:56.499Z"
 									},
 									"fullPath": "/jslibmt.data.json",
-									"id": 512
+									"id": 698
 								},
 								{
 									"name": "mt.helper.js",
@@ -681,7 +795,7 @@
 										"birthtime": "2017-03-25T04:32:56.499Z"
 									},
 									"fullPath": "/jslibmt.helper.js",
-									"id": 513
+									"id": 699
 								},
 								{
 									"name": "phaser.js",
@@ -702,7 +816,7 @@
 										"birthtime": "2017-03-25T04:32:56.511Z"
 									},
 									"fullPath": "/jslibphaser.js",
-									"id": 514
+									"id": 700
 								},
 								{
 									"name": "phaser.map",
@@ -723,7 +837,7 @@
 										"birthtime": "2017-03-25T04:32:56.515Z"
 									},
 									"fullPath": "/jslibphaser.map",
-									"id": 515
+									"id": 701
 								},
 								{
 									"name": "phaser.min.js",
@@ -744,7 +858,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaser.min.js",
-									"id": 516
+									"id": 702
 								},
 								{
 									"name": "phaserHacks.js",
@@ -765,7 +879,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks.js",
-									"id": 517
+									"id": 703
 								},
 								{
 									"name": "phaserHacks2.0.7.js",
@@ -786,7 +900,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks2.0.7.js",
-									"id": 518
+									"id": 704
 								},
 								{
 									"name": "phaserHacks2.0.js",
@@ -807,7 +921,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks2.0.js",
-									"id": 519
+									"id": 705
 								},
 								{
 									"name": "phaserHacks2.1.3.js",
@@ -828,7 +942,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks2.1.3.js",
-									"id": 520
+									"id": 706
 								},
 								{
 									"name": "phaserHacks2.1.js",
@@ -849,7 +963,7 @@
 										"birthtime": "2017-03-25T04:32:56.523Z"
 									},
 									"fullPath": "/jslibphaserHacks2.1.js",
-									"id": 521
+									"id": 707
 								},
 								{
 									"name": "phaserHacks2.2.js",
@@ -870,10 +984,10 @@
 										"birthtime": "2017-03-25T04:32:56.523Z"
 									},
 									"fullPath": "/jslibphaserHacks2.2.js",
-									"id": 522
+									"id": 708
 								}
 							],
-							"id": 523,
+							"id": 709,
 							"isClosed": false
 						},
 						{
@@ -895,7 +1009,7 @@
 								"birthtime": "2017-03-25T04:32:56.527Z"
 							},
 							"fullPath": "/jsmain.js",
-							"id": 524
+							"id": 710
 						},
 						{
 							"name": "state",
@@ -936,7 +1050,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstateboot.js",
-									"id": 525
+									"id": 711
 								},
 								{
 									"name": "demo.js",
@@ -957,7 +1071,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstatedemo.js",
-									"id": 526
+									"id": 712
 								},
 								{
 									"name": "load.js",
@@ -978,7 +1092,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstateload.js",
-									"id": 527
+									"id": 713
 								},
 								{
 									"name": "menu.js",
@@ -999,7 +1113,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstatemenu.js",
-									"id": 528
+									"id": 714
 								},
 								{
 									"name": "play.js",
@@ -1020,14 +1134,14 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstateplay.js",
-									"id": 529
+									"id": 715
 								}
 							],
-							"id": 530,
+							"id": 716,
 							"isClosed": false
 						}
 					],
-					"id": 531,
+					"id": 717,
 					"isClosed": false
 				},
 				{
@@ -1049,7 +1163,7 @@
 						"birthtime": "2017-03-25T04:32:56.523Z"
 					},
 					"fullPath": "/index.html",
-					"id": 532
+					"id": 718
 				},
 				{
 					"name": "manifest.json",
@@ -1070,27 +1184,27 @@
 						"birthtime": "2017-03-25T04:32:56.523Z"
 					},
 					"fullPath": "/manifest.json",
-					"id": 533
+					"id": 719
 				},
 				{
 					"name": "pickle.json",
-					"id": 534,
+					"id": 720,
 					"fullPath": "/pickle.json"
 				},
 				{
 					"name": "notes.md",
-					"id": 535,
+					"id": 721,
 					"fullPath": "/notes.md"
 				},
 				{
 					"name": "new Folder",
 					"contents": [],
-					"id": 536,
+					"id": 722,
 					"fullPath": "/new Folder"
 				}
 			],
-			"count": 537,
-			"id": 537,
+			"count": 723,
+			"id": 723,
 			"fullPath": "/"
 		}
 	],

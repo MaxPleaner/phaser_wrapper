@@ -147,13 +147,121 @@ window.mt = window.mt || {}; window.mt.data = {
 				"fps": 10,
 				"updated": 1490495883998,
 				"atlas": ""
+			},
+			{
+				"id": "977e45ac-00d1-485e-a181-97d186bacd14",
+				"name": "bg_castle.png",
+				"fullPath": "/bg_castle.png",
+				"key": "/bg_castle.png",
+				"width": 256,
+				"height": 256,
+				"frameWidth": 256,
+				"frameHeight": 256,
+				"frameMax": -1,
+				"margin": 0,
+				"spacing": 0,
+				"anchorX": 0,
+				"anchorY": 0,
+				"fps": 10,
+				"updated": 1490567514336,
+				"atlas": ""
+			},
+			{
+				"id": "07849379-5bd3-4b06-8b07-48e8514ac7eb",
+				"name": "fire-bottom.png",
+				"fullPath": "/fire-bottom.png",
+				"key": "/fire-bottom.png",
+				"width": 180,
+				"height": 44,
+				"frameWidth": 180,
+				"frameHeight": 44,
+				"frameMax": -1,
+				"margin": 0,
+				"spacing": 0,
+				"anchorX": 0,
+				"anchorY": 0,
+				"fps": 10,
+				"updated": 1490568814056,
+				"atlas": ""
 			}
 		],
-		"count": 12
+		"count": 14
 	},
 	"objects": {
 		"name": "objects",
 		"contents": [
+			{
+				"assetId": "07849379-5bd3-4b06-8b07-48e8514ac7eb",
+				"x": -29.999999999999996,
+				"y": 649.9999999999999,
+				"type": 0,
+				"anchorX": 0,
+				"anchorY": 0,
+				"userData": {},
+				"physics": {
+					"enable": 0
+				},
+				"scaleX": 7.389006121714792,
+				"scaleY": 1.5761019299963466,
+				"angle": 0,
+				"alpha": 1,
+				"frame": 0,
+				"isVisible": 1,
+				"isLocked": 0,
+				"contents": [],
+				"width": 1330.0211019086626,
+				"height": 69.34848491983925,
+				"id": "tmp1490568825851",
+				"name": "fire-bottom",
+				"index": -1,
+				"fullPath": "/fire-bottom",
+				"movies": {
+					"__main": {
+						"frames": [],
+						"info": {
+							"fps": 60
+						},
+						"subdata": []
+					}
+				},
+				"assetKey": "/fire-bottom.png"
+			},
+			{
+				"assetId": "977e45ac-00d1-485e-a181-97d186bacd14",
+				"x": 8.171241461241152e-14,
+				"y": 2.4999999999999005,
+				"type": 0,
+				"anchorX": 0,
+				"anchorY": 0,
+				"userData": {},
+				"physics": {
+					"enable": 0
+				},
+				"scaleX": 5.023799743461077,
+				"scaleY": 2.8203326213573576,
+				"angle": 0,
+				"alpha": 1,
+				"frame": 0,
+				"isVisible": 1,
+				"isLocked": 0,
+				"contents": [],
+				"width": 1286.0927343260357,
+				"height": 722.0051510674836,
+				"id": "tmp1490565395371",
+				"name": "bg_castle",
+				"index": -1,
+				"fullPath": "/bg_castle",
+				"movies": {
+					"__main": {
+						"frames": [],
+						"info": {
+							"fps": 60
+						},
+						"subdata": []
+					}
+				},
+				"assetKey": "/bg_castle.png"
+			},
 			{
 				"assetId": "2de18482-dc31-42ab-8d56-bdf1741ebf9b",
 				"x": 1224.999999999999,
@@ -295,7 +403,7 @@ window.mt = window.mt || {}; window.mt.data = {
 				"isLocked": 0,
 				"contents": [],
 				"width": 100.19062205492546,
-				"height": 109.00008325220176,
+				"height": 109.00008325220175,
 				"id": "tmp1490544694008",
 				"name": "foo",
 				"index": -1,
@@ -393,13 +501,13 @@ window.mt = window.mt || {}; window.mt.data = {
 		"count": 0
 	},
 	"map": {
-		"cameraX": -429.6666666666665,
-		"cameraY": -250,
-		"worldWidth": 1280,
-		"worldHeight": 710,
-		"viewportWidth": 1280,
-		"viewportHeight": 710,
-		"scaleMode": "RESIZE",
+		"cameraX": -436.66666666666674,
+		"cameraY": -82.66666666666667,
+		"worldWidth": 600,
+		"worldHeight": 700,
+		"viewportWidth": 600,
+		"viewportHeight": 700,
+		"scaleMode": "NO_SCALE",
 		"gridX": 32,
 		"gridY": 32,
 		"gridOffsetX": 0,
