@@ -1,5 +1,11 @@
 module.exports = Util = 
 
+  random_int: (min, max) ->
+    Math.floor(Math.random() * (max - min + 1)) + min
+
+  random_from_list: (list) ->
+    list[Math.floor((Math.random() * list.length))]
+
   collide_world_bounds: (sprite) ->
     sprite.body.collideWorldBounds = true
   

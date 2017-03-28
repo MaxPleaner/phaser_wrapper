@@ -6,6 +6,9 @@ module.exports = load: (caller) ->
   midpoint_x = game_width / 2 
   midpoint_y = game_height / 2
 
+  hidden_x = -500
+  hidden_y = -500
+
   ball_start_x = midpoint_x / 2
   ball_start_y = 0
 
@@ -32,7 +35,7 @@ module.exports = load: (caller) ->
   left_outlane_opening_x = midpoint_x - 200
   left_outlane_opening_y = midpoint_y - 75
 
-  flipper_rotation_speed = 300
+  flipper_rotation_speed = 400
   flipper_revert_speed = 100
   flipper_max_rotation = 0.75  
 
@@ -40,6 +43,9 @@ module.exports = load: (caller) ->
   materials = {}
   contact_materials = {}
   groups = {}
+  animations = {}
+
+  monster_velocity = 100
   
   cursors = caller.game.input.keyboard.createCursorKeys();
   
@@ -80,6 +86,8 @@ module.exports = load: (caller) ->
     floor_y,
     flipper_rotation_speed,
     flipper_revert_speed,
-    flipper_max_rotation
-
+    flipper_max_rotation,
+    hidden_x,
+    hidden_y,
+    monster_velocity,
   }

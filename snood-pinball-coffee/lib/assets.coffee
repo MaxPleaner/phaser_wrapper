@@ -17,6 +17,10 @@ module.exports = Assets =
   right_bumper:  './assets/right-bumper.png'
   right_outlane_opening: './assets/right-outlane-opening.png'
   left_outlane_opening: './assets/left-outlane-opening.png'
+  cloister: './assets/cloister.png'
+  slobro: './assets/slowbro.png'
+  kirby_eye: './assets/kirby_eye.png'
+  kirby_eye_2: './assets/kirby_eye_2.png'
 
   floor_physics:         './assets/floor.json'
   flipper_left_physics:  './assets/flipper-left.json'

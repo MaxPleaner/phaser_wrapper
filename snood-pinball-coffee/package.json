@@ -15,6 +15,7 @@
     "coffee-script": "^1.12.4",
     "phaser": "^2.6.2",
     "script-loader": "^0.7.0",
+    "underscore": "^1.8.3",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
   }

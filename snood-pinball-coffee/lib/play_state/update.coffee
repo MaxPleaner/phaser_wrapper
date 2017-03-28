@@ -28,3 +28,14 @@ module.exports = ->
     @flipper_left.body.rotateLeft(0)
     @flipper_left.rotation = 0
 
+# ------------------------------------------------
+# Monster movement
+# ------------------------------------------------
+
+  @active_monsters.forEach (monster) =>
+    if monster.body.x < 75
+      monster.body.velocity.x = @monster_velocity
+      monster.scale.x *= -1
+    else if monster.body.x >= (@game_width - 75)
+      monster.body.velocity.x = -@monster_velocity
+      monster.scale.x *= -1

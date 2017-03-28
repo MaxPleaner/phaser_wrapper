@@ -22,6 +22,7 @@ module.exports = ->
     @turn_off_gravity @floor
 
     # wall
+    @walls = []
     @groups.walls = @add_group()
     @left_wall = @add_p2_sprite @left_wall_x, @left_wall_y, 'wall'
     @right_wall = @add_p2_sprite @right_wall_x, @right_wall_y, 'wall'
@@ -30,8 +31,10 @@ module.exports = ->
         @make_static wall
         @turn_off_gravity wall
         @groups.walls.add wall
+        @walls.push wall
 
     # bumpers
+    @bumpers = []
     @groups.bumpers = @add_group()
     @left_bumper = @add_p2_sprite @left_bumper_x, @left_bumper_y, 'left_bumper'
     @right_bumper = @add_p2_sprite @right_bumper_x, @right_bumper_y, 'right_bumper'
@@ -41,8 +44,10 @@ module.exports = ->
         @make_static bumper
         @turn_off_gravity bumper
         @groups.bumpers.add bumper
+        @bumpers.push bumper
 
     # flippers
+    @flippers = []
     @groups.flippers = @add_group()
     @flipper_left = @add_p2_sprite @flipper_left_x, @flipper_left_y, 'flipper_left'
     @flipper_right = @add_p2_sprite @flipper_right_x, @flipper_right_y, 'flipper_right'
@@ -52,8 +57,10 @@ module.exports = ->
         @make_static flipper
         @turn_off_gravity flipper
         @groups.flippers.add flipper
+        @flippers.push flipper
 
-    # outland openings
+    # outlane openings
+    @outlane_openings = []
     @groups.outlane_openings = @add_group()
     @right_outlane_opening = @add_p2_sprite(
         @right_outlane_opening_x, @right_outlane_opening_y, "right_outlane_opening"
@@ -71,6 +78,47 @@ module.exports = ->
         @make_static outlane_opening
         @turn_off_gravity outlane_opening
         @groups.outlane_openings.add outlane_opening
+        @outlane_openings.push outlane_opening
+
+    # monster animations
+    @cloister = @add_p2_sprite @hidden_x, @hidden_y, 'cloister'
+    @slobro = @add_p2_sprite @hidden_x, @hidden_y, 'slobro'
+    @kirby_eye = @add_p2_sprite @hidden_x, @hidden_y, 'kirby_eye'
+    @kirby_eye_2 = @add_p2_sprite @hidden_x, @hidden_y, 'kirby_eye_2'
+
+    @monsters = [@cloister, @slobro, @kirby_eye, @kirby_eye_2]
+    @active_monsters = new Set()
+    @monsters.forEach (monster) =>
+        @make_static monster
+        @turn_off_gravity monster
+        monster.animations.add("walk")
+        monster.animations.play "walk", 10, true
+
+    gen_monster = =>
+        x = @random_int(15, @game_width - 80)
+        y = @random_int(15, @midpoint_y - 80)
+        monster = @random_from_list(_.difference(@monsters, @active_monsters))
+        if monster
+            monster.body.x = x
+            monster.body.y = y
+            facing_right = Math.random() < 0.5
+            monster.body.velocity.x = @monster_velocity * (
+                if facing_right then 1 else -1
+            )
+            if !facing_right
+                monster.scale.x *= -1
+            @active_monsters.add monster
+            monster
+
+    for i in [1..2]
+        gen_monster()
+
+    # UI stuff
+    style = 
+        font: "bold 32px Arial"
+        fill: "#fff",
+        boundsAlignH: "center",
+        boundsAlignV: "middle"
 
 # ------------------------------------------------
 # collisions and materials
@@ -86,18 +134,21 @@ module.exports = ->
     @collision_groups.floor = @create_collision_group()
     @collision_groups.bumpers = @create_collision_group()
     @collision_groups.outlane_openings = @create_collision_group()
+    @collision_groups.monsters = @create_collision_group()
 
     # apply collision groups
     @set_sprite_collision_group(@ball, @collision_groups.ball)
     @set_sprite_collision_group @floor, @collision_groups.floor
-    @groups.flippers.forEach (flipper) =>
+    @flippers.forEach (flipper) =>
         @set_sprite_collision_group flipper, @collision_groups.flippers    
-    @groups.walls.forEach (wall) =>
+    @walls.forEach (wall) =>
         @set_sprite_collision_group wall, @collision_groups.walls
-    @groups.bumpers.forEach (bumper) =>
+    @bumpers.forEach (bumper) =>
         @set_sprite_collision_group bumper, @collision_groups.bumpers
-    @groups.outlane_openings.forEach (outlane_opening) =>
+    @outlane_openings.forEach (outlane_opening) =>
         @set_sprite_collision_group outlane_opening, @collision_groups.outlane_openings
+    @monsters.forEach (monster) =>
+        @set_sprite_collision_group monster, @collision_groups.monsters
 
     # connect collision groups
     # everything needs to be here twice
@@ -108,6 +159,7 @@ module.exports = ->
     @ball.body.collides @collision_groups.floor
     @ball.body.collides @collision_groups.bumpers
     @ball.body.collides @collision_groups.outlane_openings
+    @ball.body.collides @collision_groups.monsters
 
     # Then for other object => ball
 
@@ -116,28 +168,30 @@ module.exports = ->
         ball.x = @midpoint_x
         ball.velocity.x = 90 * (if Math.random() > 0.5 then 1 else -1)
 
+    monster_and_ball_collision = (monster, ball) =>
+        monster.x = @hidden_x
+        monster.y = @hidden_y
+        @active_monsters.delete(monster)
+        gen_monster()
+
     @floor.body.collides @collision_groups.ball, floor_and_ball_collision
+    @monsters.forEach (monster) =>
+        monster.body.collides @collision_groups.ball, monster_and_ball_collision
+
     ["flippers", "walls", "bumpers", "outlane_openings"].forEach (group_name) =>
         @groups[group_name].forEach (item) =>
             item.body.collides @collision_groups.ball
 
-    # materials
-    [flippers, bumpers, walls, outlane_openings] = [[], [], [], []]
-    @groups.flippers.forEach (flipper) -> flippers.push flipper
-    @groups.bumpers.forEach (flipper) -> bumpers.push flipper
-    @groups.walls.forEach (flipper) -> walls.push flipper
-    @groups.outlane_openings.forEach (outlane_opening) -> outlane_openings.push outlane_opening
-
     @materials.world = @add_world_material 'world_material'
     @materials.ball = @add_sprite_material @ball, 'ball_material'
-    @materials.flippers = @add_sprite_material flippers..., 'flippers_material'
-    @materials.bumpers = @add_sprite_material bumpers..., 'bumpers_material'
-    @materials.walls = @add_sprite_material walls..., 'walls_material'
+    @materials.flippers = @add_sprite_material @flippers..., 'flippers_material'
+    @materials.bumpers = @add_sprite_material @bumpers..., 'bumpers_material'
+    @materials.walls = @add_sprite_material @walls..., 'walls_material'
     @materials.outlane_openings = @add_sprite_material(
-        outlane_openings..., 'outlane_openings_material'
+        @outlane_openings..., 'outlane_openings_material'
     )
 
-    # contact materials
+    # contact materials - this is where physics of the contact can be customized
     @contact_materials.ball_and_world = @add_contact_material(
       @materials.ball,
       @materials.world,
@@ -161,7 +215,6 @@ module.exports = ->
         @materials.bumpers,
         restitution: 0.5
     )
-
 
     @contact_materials.ball_and_outlane_opening = @add_contact_material(
         @materials.ball,
