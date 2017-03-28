@@ -1,0 +1,61 @@
+{ 
+    
+    "cloister_frames": [
+        
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   6, -0.5  ,  7, -0.5  ,  49, 18.5  ,  47.5, 41  ,  1, 45.5  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   97.5, 13  ,  97.5, 14  ,  91, 48.5  ,  59, 45.5  ,  62.5, 1  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   102.5, 38  ,  91, 48.5  ,  97.5, 14  ,  105.5, 14  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   117.5, 3  ,  130, 8.5  ,  148, 48.5  ,  112.5, 39  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   160.5, 40  ,  148, 48.5  ,  130, 8.5  ,  131, 8.5  ,  160.5, 14  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   174.5, 1  ,  193, 6.5  ,  215.5, 39  ,  171, 45.5  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   215.5, 39  ,  193, 6.5  ,  194, 6.5  ,  216, 13.5  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   228.5, 1  ,  253, 5.5  ,  271.5, 41  ,  225, 45.5  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   271.5, 41  ,  253, 5.5  ,  254, 5.5  ,  273, 18.5  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   286, 48.5  ,  307, 16.5  ,  322, 13.5  ,  325.5, 46  ]
+        } ,
+        {
+            "density": 2, "friction": 0, "bounce": 0, 
+            "filter": { "categoryBits": 1, "maskBits": 65535 },
+            "shape": [   306, 16.5  ,  307, 16.5  ,  286, 48.5  ,  282.5, 18  ]
+        }
+    ]
+}
