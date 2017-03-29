@@ -6,8 +6,8 @@
 				{
 					"assetId": "07849379-5bd3-4b06-8b07-48e8514ac7eb",
 					"__image": "22a299e8-a881-4023-a030-0621e5b88277.png",
-					"x": -29.999999999999996,
-					"y": 649.9999999999999,
+					"x": 14.999999999999957,
+					"y": 879.9999999999998,
 					"type": 0,
 					"anchorX": 0,
 					"anchorY": 0,
@@ -80,13 +80,15 @@
 				{
 					"assetId": "2de18482-dc31-42ab-8d56-bdf1741ebf9b",
 					"__image": "610295d0-6190-4fc8-b00c-1625a5824610.png",
-					"x": 1224.999999999999,
-					"y": 459.99999999999966,
+					"x": 1154.999999999999,
+					"y": 404.99999999999966,
 					"type": 0,
 					"anchorX": 0,
 					"anchorY": 0,
 					"userData": {},
-					"physics": {},
+					"physics": {
+						"enable": 0
+					},
 					"scaleX": 1,
 					"scaleY": 1,
 					"angle": 0,
@@ -204,8 +206,8 @@
 				{
 					"assetId": "6524da85-689c-4afd-8810-d7e9d0bfa2c4",
 					"__image": "7664cc6f-789b-4a7d-90ad-865cef734773.png",
-					"x": 1304.999999999999,
-					"y": -89.99999999999996,
+					"x": 1399.9999999999989,
+					"y": 9.999999999999975,
 					"type": 0,
 					"anchorX": 0,
 					"anchorY": 0,
@@ -531,8 +533,8 @@
 			"name": "map",
 			"contents": [
 				{
-					"cameraX": -436.66666666666674,
-					"cameraY": -82.66666666666667,
+					"cameraX": -537.9999999999999,
+					"cameraY": -208.99999999999997,
 					"worldWidth": 600,
 					"worldHeight": 700,
 					"viewportWidth": 600,
@@ -645,10 +647,10 @@
 								"birthtime": "2017-03-25T04:32:56.527Z"
 							},
 							"fullPath": "/cssmain.css",
-							"id": 755
+							"id": 786
 						}
 					],
-					"id": 756
+					"id": 787
 				},
 				{
 					"name": "fonts",
@@ -689,10 +691,10 @@
 								"birthtime": "2017-03-25T04:32:56.527Z"
 							},
 							"fullPath": "/fontsfonts.css",
-							"id": 757
+							"id": 788
 						}
 					],
-					"id": 758
+					"id": 789
 				},
 				{
 					"name": "js",
@@ -753,7 +755,7 @@
 										"birthtime": "2017-03-25T04:32:56.499Z"
 									},
 									"fullPath": "/jslibmt.data.js",
-									"id": 759
+									"id": 790
 								},
 								{
 									"name": "mt.data.json",
@@ -774,7 +776,7 @@
 										"birthtime": "2017-03-25T04:32:56.499Z"
 									},
 									"fullPath": "/jslibmt.data.json",
-									"id": 760
+									"id": 791
 								},
 								{
 									"name": "mt.helper.js",
@@ -795,7 +797,7 @@
 										"birthtime": "2017-03-25T04:32:56.499Z"
 									},
 									"fullPath": "/jslibmt.helper.js",
-									"id": 761
+									"id": 792
 								},
 								{
 									"name": "phaser.js",
@@ -816,7 +818,7 @@
 										"birthtime": "2017-03-25T04:32:56.511Z"
 									},
 									"fullPath": "/jslibphaser.js",
-									"id": 762
+									"id": 793
 								},
 								{
 									"name": "phaser.map",
@@ -837,7 +839,7 @@
 										"birthtime": "2017-03-25T04:32:56.515Z"
 									},
 									"fullPath": "/jslibphaser.map",
-									"id": 763
+									"id": 794
 								},
 								{
 									"name": "phaser.min.js",
@@ -858,7 +860,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaser.min.js",
-									"id": 764
+									"id": 795
 								},
 								{
 									"name": "phaserHacks.js",
@@ -879,7 +881,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks.js",
-									"id": 765
+									"id": 796
 								},
 								{
 									"name": "phaserHacks2.0.7.js",
@@ -900,7 +902,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks2.0.7.js",
-									"id": 766
+									"id": 797
 								},
 								{
 									"name": "phaserHacks2.0.js",
@@ -921,7 +923,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks2.0.js",
-									"id": 767
+									"id": 798
 								},
 								{
 									"name": "phaserHacks2.1.3.js",
@@ -942,7 +944,7 @@
 										"birthtime": "2017-03-25T04:32:56.519Z"
 									},
 									"fullPath": "/jslibphaserHacks2.1.3.js",
-									"id": 768
+									"id": 799
 								},
 								{
 									"name": "phaserHacks2.1.js",
@@ -963,7 +965,7 @@
 										"birthtime": "2017-03-25T04:32:56.523Z"
 									},
 									"fullPath": "/jslibphaserHacks2.1.js",
-									"id": 769
+									"id": 800
 								},
 								{
 									"name": "phaserHacks2.2.js",
@@ -984,10 +986,10 @@
 										"birthtime": "2017-03-25T04:32:56.523Z"
 									},
 									"fullPath": "/jslibphaserHacks2.2.js",
-									"id": 770
+									"id": 801
 								}
 							],
-							"id": 771,
+							"id": 802,
 							"isClosed": false
 						},
 						{
@@ -1009,7 +1011,7 @@
 								"birthtime": "2017-03-25T04:32:56.527Z"
 							},
 							"fullPath": "/jsmain.js",
-							"id": 772
+							"id": 803
 						},
 						{
 							"name": "state",
@@ -1050,7 +1052,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstateboot.js",
-									"id": 773
+									"id": 804
 								},
 								{
 									"name": "demo.js",
@@ -1071,7 +1073,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstatedemo.js",
-									"id": 774
+									"id": 805
 								},
 								{
 									"name": "load.js",
@@ -1092,7 +1094,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstateload.js",
-									"id": 775
+									"id": 806
 								},
 								{
 									"name": "menu.js",
@@ -1113,7 +1115,7 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstatemenu.js",
-									"id": 776
+									"id": 807
 								},
 								{
 									"name": "play.js",
@@ -1134,14 +1136,14 @@
 										"birthtime": "2017-03-25T04:32:56.527Z"
 									},
 									"fullPath": "/jsstateplay.js",
-									"id": 777
+									"id": 808
 								}
 							],
-							"id": 778,
+							"id": 809,
 							"isClosed": false
 						}
 					],
-					"id": 779,
+					"id": 810,
 					"isClosed": false
 				},
 				{
@@ -1163,7 +1165,7 @@
 						"birthtime": "2017-03-25T04:32:56.523Z"
 					},
 					"fullPath": "/index.html",
-					"id": 780
+					"id": 811
 				},
 				{
 					"name": "manifest.json",
@@ -1184,27 +1186,27 @@
 						"birthtime": "2017-03-25T04:32:56.523Z"
 					},
 					"fullPath": "/manifest.json",
-					"id": 781
+					"id": 812
 				},
 				{
 					"name": "pickle.json",
-					"id": 782,
+					"id": 813,
 					"fullPath": "/pickle.json"
 				},
 				{
 					"name": "notes.md",
-					"id": 783,
+					"id": 814,
 					"fullPath": "/notes.md"
 				},
 				{
 					"name": "new Folder",
 					"contents": [],
-					"id": 784,
+					"id": 815,
 					"fullPath": "/new Folder"
 				}
 			],
-			"count": 785,
-			"id": 785,
+			"count": 816,
+			"id": 816,
 			"fullPath": "/"
 		}
 	],

@@ -193,7 +193,7 @@ window.mt = window.mt || {}; window.mt.data = {
 			{
 				"assetId": "07849379-5bd3-4b06-8b07-48e8514ac7eb",
 				"x": -29.999999999999996,
-				"y": 649.9999999999999,
+				"y": 549.9999999999999,
 				"type": 0,
 				"anchorX": 0,
 				"anchorY": 0,
@@ -501,8 +501,8 @@ window.mt = window.mt || {}; window.mt.data = {
 		"count": 0
 	},
 	"map": {
-		"cameraX": -436.66666666666674,
-		"cameraY": -82.66666666666667,
+		"cameraX": -537.9999999999999,
+		"cameraY": -208.99999999999997,
 		"worldWidth": 600,
 		"worldHeight": 700,
 		"viewportWidth": 600,
