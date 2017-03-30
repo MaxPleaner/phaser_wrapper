@@ -56,9 +56,8 @@ and from the included code, found a pool game example.
 It was a pretty rote process, just rewriting the codebase in Coffeescript and splitting up some of the files in a
 `module.exports` fashion.
 
-Nevertheless, this could potentially be a boilerplate for Webpack/Coffee/Phaser development. It has a few things going for it.
-It's a fairly complex game including a lot P2 usage. And the source code is mainly in a few files - it's easy to delete most
-of it and get a clean slate. I'm gonna let the source code there be self-explanatory, but for a complete walkthrough of this
+Nevertheless, it has a few things going for it. It shows a lot of Phaser / P2 functionality. 
+For a complete walkthrough of this
 pool game see the Interphase book (which was written by Phaser's creators).
 
 There's a `webpack.config.js` here which sets up coffeescript and phaser (which requires some shims)
@@ -72,7 +71,7 @@ cd 8-ball-pool-coffee
 npm install
 npm run dev
 # visit http://localhost:8080
-**
+```
 
 ---
 
@@ -80,4 +79,7 @@ npm run dev
 
 The last Phaser project before I made myself get around to other things (such as writing this README).
 
-# TODO cover this project
+This is a rewrite of project #1 (snood-pinball-mightyeditor) but it' more fleshed out and written with webpack/coffeescript instead
+of mightyeditor.
+
+For more detail, please see the readme [here](./snood-pinball-coffee/readme.md)
