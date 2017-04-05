@@ -83,3 +83,15 @@ This is a rewrite of project #1 (snood-pinball-mightyeditor) but it' more fleshe
 of mightyeditor.
 
 For more detail, please see the readme [here](./snood-pinball-coffee/readme.md)
+
+---
+
+Phaser also supports webm videos with alpha channels (transparency).
+
+For example, here's 3 webms overlaid on top of one another.
+
+To create these transparent webms requires some shell scripts. I plan on
+including these in a project to be released later which is a webpack loader that
+abstracts them away.  
+
+![overlay of webm to make animation](./webm_overlay.gif)
